@@ -1,8 +1,10 @@
 #!/bin/bash
-#Lecture de ligne Tapée par l'utilisateur et stockage
-read -a arg
-#Initialisation du compteur à 1 
-i=1
-for arg in "${arg[@]}"; do
-    echo "Argument $((i++)): $arg" #Affiche chaque argument avec son numéro
-done
+# Ce script rechercher une chaine de caractères dans un fichier
+read filename #Demande à l'utilisateur d'entrer le nom d'un fichier 
+read chaine # Demande à l'utilisateur d'entrer la chaine à rechercher 
+# Utilisation de grep avec -q (quiet) pour vérifier si la chaine existe dansle fichier
+if grep -q "$chaine" "$filename"; then
+  echo "La chaine '$chaine' a été trouvée dans $filename."
+else 
+  echo "La chaine '$chaine' n'a pas été trouvée dans $filename."
+fi
