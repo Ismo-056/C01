@@ -1,7 +1,7 @@
 #!/bin/bash
 #Demande à l'utilisateur d'entrer a,b,et opera
 read a b opera
-#Vérification de type d'opérateur
+#Verification de Type d'operateur
 if [ "$opera" = "+" ]; then
     resulta=$(($a + $b)) #Addition
 elif [ "$opera" = "-" ]; then
